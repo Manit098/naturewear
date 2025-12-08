@@ -2,6 +2,7 @@ import mongoose, { Schema, Model } from "mongoose"
 
 export interface IOrder {
   userId: string
+  paypalOrderId?: string
   userEmail: string
   items: Array<{
     productId: string
@@ -30,6 +31,9 @@ const OrderSchema = new Schema<IOrder>(
     userId: {
       type: String,
       required: true,
+    },
+    paypalOrderId: {
+      type: String,
     },
     userEmail: {
       type: String,

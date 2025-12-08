@@ -4,7 +4,7 @@
 
 ### 1. TypeScript Errors ✅
 - Fixed type error in `app/admin/settings/page.tsx` (Policy content type)
-- Updated Stripe API version to latest: `2025-11-17.clover`
+- Updated payment API integration to latest requirements
 - Fixed Suspense boundary for `useSearchParams()` in cart page
 
 ### 2. Development Code Removed ✅
@@ -39,9 +39,10 @@ Create `.env.local` with:
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_...
 CLERK_SECRET_KEY=sk_live_...
 MONGODB_URI=mongodb+srv://...
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_...
-STRIPE_SECRET_KEY=sk_live_...
-STRIPE_WEBHOOK_SECRET=whsec_...
+PAYPAL_CLIENT_ID=live_client_id
+PAYPAL_SECRET=live_secret
+# Optional for sandbox
+# PAYPAL_BASE_URL=https://api-m.sandbox.paypal.com
 NEXT_PUBLIC_APP_URL=https://yourdomain.com
 NODE_ENV=production
 ```
@@ -51,7 +52,7 @@ NODE_ENV=production
 1. **Set Environment Variables** in your hosting platform
 2. **Build the application**: `npm run build`
 3. **Start production server**: `npm start`
-4. **Configure Stripe Webhook** to point to your domain
+4. **Configure PayPal** application (client/secret) and update envs
 5. **Test all features**:
    - User authentication
    - Product browsing

@@ -32,34 +32,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Nav />
-        <SignIn
-          routing="hash"
-          appearance={{
-            elements: {
-              rootBox: "mx-auto",
-              card: "shadow-2xl border border-green-100",
-              headerTitle: "text-green-700",
-              headerSubtitle: "text-gray-600",
-              socialButtonsBlockButton: "border-green-200 hover:bg-green-50",
-              formButtonPrimary: "bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800",
-              footerActionLink: "text-green-600 hover:text-green-700",
-            },
-          }}
-        />
-        <SignUp
-          routing="hash"
-          appearance={{
-            elements: {
-              rootBox: "mx-auto",
-              card: "shadow-2xl border border-green-100",
-              headerTitle: "text-green-700",
-              headerSubtitle: "text-gray-600",
-              socialButtonsBlockButton: "border-green-200 hover:bg-green-50",
-              formButtonPrimary: "bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800",
-              footerActionLink: "text-green-600 hover:text-green-700",
-            },
-          }}
-        />
+        
+        
+        
         <main className="min-h-screen pt-20">
           {children}
         </main>

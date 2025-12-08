@@ -19,10 +19,11 @@ CLERK_SECRET_KEY=sk_live_...
 # MongoDB Connection
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/naturewear
 
-# Stripe Payment Gateway
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_...
-STRIPE_SECRET_KEY=sk_live_...
-STRIPE_WEBHOOK_SECRET=whsec_...
+# PayPal Payment Gateway
+PAYPAL_CLIENT_ID=live_client_id
+PAYPAL_SECRET=live_secret
+# For sandbox testing:
+# PAYPAL_BASE_URL=https://api-m.sandbox.paypal.com
 
 # Application URL
 NEXT_PUBLIC_APP_URL=https://yourdomain.com
