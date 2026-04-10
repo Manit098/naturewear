@@ -44,7 +44,7 @@ function CartPageContent() {
     city: "",
     state: "",
     zipCode: "",
-    country: "United States",
+    country: "India",
     isDefault: false,
   })
   const searchParams = useSearchParams()
@@ -158,7 +158,7 @@ function CartPageContent() {
       city: "",
       state: "",
       zipCode: "",
-      country: "United States",
+      country: "India",
       isDefault: false,
     })
   }
@@ -224,7 +224,7 @@ function CartPageContent() {
     (sum, item) => sum + item.price * item.quantity,
     0
   )
-  const shipping = 9.99
+  const shipping = 99
   const total = subtotal + shipping
 
   return (
@@ -304,12 +304,12 @@ function CartPageContent() {
                       </h3>
                       <div className="text-right sm:hidden">
                         <p className="text-lg font-bold text-gray-900">
-                          ${(item.price * item.quantity).toFixed(2)}
+                          ₹{(item.price * item.quantity).toLocaleString("en-IN", { maximumFractionDigits: 0 })}
                         </p>
                       </div>
                     </div>
                     <p className="text-xl sm:text-2xl font-bold text-green-600 mb-3 sm:mb-4">
-                      ${item.price}
+                      ₹{item.price.toLocaleString("en-IN")}
                     </p>
                     
                     <div className="flex items-center justify-between sm:justify-start gap-3 sm:gap-4">
@@ -342,7 +342,7 @@ function CartPageContent() {
                   
                   <div className="hidden sm:block text-right">
                     <p className="text-xl font-bold text-gray-900">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      ₹{(item.price * item.quantity).toLocaleString("en-IN", { maximumFractionDigits: 0 })}
                     </p>
                   </div>
                   </motion.div>
@@ -458,15 +458,15 @@ function CartPageContent() {
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between text-gray-600">
                     <span>Subtotal</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span>₹{subtotal.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
                   </div>
                   <div className="flex justify-between text-gray-600">
                     <span>Shipping</span>
-                    <span>${shipping.toFixed(2)}</span>
+                    <span>₹{shipping.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
                   </div>
                   <div className="border-t border-gray-200 pt-4 flex justify-between text-xl font-bold text-gray-900">
                     <span>Total</span>
-                    <span className="text-green-600">${total.toFixed(2)}</span>
+                    <span className="text-green-600">₹{total.toLocaleString("en-IN", { maximumFractionDigits: 0 })}</span>
                   </div>
                 </div>
                 
