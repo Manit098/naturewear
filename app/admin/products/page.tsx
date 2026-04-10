@@ -196,7 +196,7 @@ export default function ProductsPage() {
             </p>
             <div className="flex items-center justify-between mb-4">
               <span className="text-2xl font-bold text-green-600">
-                ${product.price}
+                ₹{product.price.toLocaleString("en-IN")}
               </span>
               <span className="text-sm text-gray-600">
                 Stock: {product.stock}
@@ -286,7 +286,7 @@ export default function ProductsPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Price ($) *
+                    Price (₹) *
                   </label>
                   <input
                     type="number"
@@ -321,14 +321,28 @@ export default function ProductsPage() {
                   Image URL *
                 </label>
                 <input
-                  type="url"
+                  type="text"
                   required
+                  placeholder="https://example.com/image.jpg"
                   value={formData.image}
                   onChange={(e) =>
                     setFormData({ ...formData, image: e.target.value })
                   }
                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
+                {formData.image && (
+                  <div className="mt-3 relative h-32 rounded-lg overflow-hidden bg-gray-100 border border-gray-200">
+                    <Image
+                      src={formData.image}
+                      alt="Preview"
+                      fill
+                      className="object-cover"
+                      onError={() => {
+                        console.log("[v0] Image failed to load from URL:", formData.image)
+                      }}
+                    />
+                  </div>
+                )}
               </div>
 
               <div>

@@ -140,7 +140,7 @@ export default function ProductsPage() {
                   
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
                     <span className="text-xl sm:text-2xl font-bold text-green-600">
-                      ${product.price}
+                      ₹{product.price.toLocaleString("en-IN")}
                     </span>
                     <button
                       onClick={() => addToCart(product)}
